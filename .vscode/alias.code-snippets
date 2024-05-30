@@ -1,0 +1,44 @@
+{
+	"Print to @": {
+		"prefix": "@",
+		"body": [
+			"@/"
+		],
+		"description": "renderer/src"
+	},
+	"Print to @renderer": {
+		"prefix": "@renderer",
+		"body": [
+			"@renderer/"
+		],
+		"description": "renderer/src"
+	},
+	"Print to @pages": {
+		"prefix": "@pages",
+		"body": [
+			"@pages/"
+		],
+		"description": "renderer/src/pages"
+	},
+	"Print to @store": {
+		"prefix": "@store",
+		"body": [
+			"@store/"
+		],
+		"description": "renderer/src/store"
+	},
+	"Print to @router": {
+		"prefix": "@router",
+		"body": [
+			"@router/"
+		],
+		"description": "renderer/src/router"
+	},
+	"Print to @assets": {
+		"prefix": "@assets",
+		"body": [
+			"@assets/"
+		],
+		"description": "renderer/src/assets"
+	},
+}

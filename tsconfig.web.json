@@ -12,7 +12,22 @@
     "paths": {
       "@renderer/*": [
         "src/renderer/src/*"
-      ]
+      ],
+      "@/*": [
+        "src/renderer/src/*"
+      ],
+      "@pages/*": [
+        "src/renderer/src/pages/*"
+      ],
+      "@store/*": [
+        "src/renderer/src/store/*"
+      ],
+      "@router/*": [
+        "src/renderer/src/router/*"
+      ],
+      "@assets/*": [
+        "src/renderer/src/assets/*"
+      ],
     }
   }
 }

@@ -1,18 +1,18 @@
-import { app, shell, BrowserWindow, ipcMain,Notification } from 'electron'
+import { app, shell, BrowserWindow, ipcMain, Notification } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 const isMac = process.platform === 'darwin'
 const isLogin = false
-let mainWindow:Electron.BrowserWindow
+let mainWindow: Electron.BrowserWindow
 
 function createWindow(): void {
   // Create the browser window.
-  let options:Electron.BrowserWindowConstructorOptions = {
-    width: 900,
+  const options: Electron.BrowserWindowConstructorOptions = {
+    width: 1200,
     height: 670,
     show: false,
-    title:'Maya后台管理系统',
+    title: 'Maya后台管理系统',
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
@@ -21,11 +21,11 @@ function createWindow(): void {
     }
   }
 
-  if(!isLogin){
-    options.width = 200
-    options.height = 200
-    options.resizable = false
-  }
+  // if (!isLogin) {
+  //   options.width = 200
+  //   options.height = 200
+  //   options.resizable = false
+  // }
 
   mainWindow = new BrowserWindow(options)
 
@@ -67,36 +67,32 @@ app.whenReady().then(() => {
   // IPC test
   ipcMain.on('ping', () => console.log('pong'))
 
-
-  ipcMain.on('notification', (event,msg) => {
-    console.log('event',event,msg)
+  ipcMain.on('notification', (event, msg) => {
+    console.log('event', event, msg)
     console.log('当前系统是否支持桌面通知', Notification.isSupported())
 
-    
-    let notification = new Notification(msg)
+    const notification = new Notification(msg)
 
     notification.show()
 
-    notification.on('click',()=>{
+    notification.on('click', () => {
       console.log('click')
     })
-    notification.on('show',()=>{
+    notification.on('show', () => {
       console.log('show')
     })
-    notification.on('close',()=>{
+    notification.on('close', () => {
       console.log('close')
     })
-    notification.on('reply',(e,replystring)=>{
-      console.log('reply',e,replystring)
+    notification.on('reply', (e, replystring) => {
+      console.log('reply', e, replystring)
     })
   })
-
-
 
   ipcMain.on('sizewin', () => {
     console.log('sizewin')
     // mainWindow.setSize(600,600)
-    console.log(isMac)    
+    console.log(isMac)
   })
 
   createWindow()
