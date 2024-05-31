@@ -24,7 +24,7 @@ onMounted(() => {
 
 <style lang="scss" scope>
 .el-switch--small {
-  // line-height: $header-height;
-  // height: $header-height;
+  // line-height: var(--news-layout-header-height);
+  // height: var(--news-layout-header-height);
 }
 </style>

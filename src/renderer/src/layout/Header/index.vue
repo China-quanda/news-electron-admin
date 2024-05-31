@@ -36,6 +36,7 @@ import LockScreen from './LockScreen.vue'
 .left,
 .right {
   display: flex;
+  align-items: center;
 }
 .breadcrumb {
   margin-left: 10px;

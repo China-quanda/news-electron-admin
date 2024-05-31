@@ -8,7 +8,7 @@ export const useUserStore = defineStore('userStore', {
         name: 'zhangsan',
         age: 23
       },
-      token: '12'
+      token: '123'
     }
   },
   getters: {

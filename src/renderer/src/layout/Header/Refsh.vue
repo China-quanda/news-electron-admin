@@ -13,7 +13,7 @@ const btn = () => {
 </script>
 
 <template>
-  <el-icon  style="cursor: pointer;width: 30px;" @click="btn">
-    <Refresh />
-  </el-icon>
+  <span @click="btn" style="cursor: pointer; margin: 0px 5px">
+    <my-icon icon="icon-shuaxin-line" size="20" />
+  </span>
 </template>

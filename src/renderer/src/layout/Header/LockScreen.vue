@@ -11,8 +11,7 @@ const btn = () => {
 </script>
 
 <template>
-  <span v-if="useStore.isLockScreen" style="cursor: pointer; margin: 0px 5px" @click="btn">
-    <!-- <my-icon icon="icon-suoding" size="26" /> -->
-    <el-icon><Lock /></el-icon>
+  <span v-if="useStore.isLockScreen" @click="btn" style="cursor: pointer; margin: 0px 5px">
+    <my-icon icon="icon-suoding" size="26" />
   </span>
 </template>

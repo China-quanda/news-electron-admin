@@ -1,10 +1,12 @@
 import type { RouteRecordRaw } from 'vue-router'
 import Layout from '@renderer/layout/index.vue'
 import systemRoute from './modules/system'
+import articleRoute from './modules/article'
 
 // 静态路由
 export const staticRoutes: RouteRecordRaw[] = [
   systemRoute,
+  articleRoute,
   {
     path: '/12',
     component: Layout,
@@ -23,7 +25,7 @@ export const staticRoutes: RouteRecordRaw[] = [
       {
         path: '/dashboard',
         name: 'Dashboard',
-        component: () => import('@renderer/pages/dashboard.vue'),
+        component: () => import('@pages/dashboard/index.vue'),
         meta: { title: '首页1-1', icon: 'icon-shouqicaidan', hidden: false }
       }
     ]
@@ -61,6 +63,13 @@ export const staticRoutes: RouteRecordRaw[] = [
         name: 'about',
         component: () => import('@/pages/common/about.vue'),
         meta: { title: '关于项目', icon: 'icon-shouqicaidan', hidden: false },
+        children: []
+      },
+      {
+        path: '/common/account',
+        name: 'account',
+        component: () => import('@/pages/account/index.vue'),
+        meta: { title: '个人中心', icon: 'icon-shouqicaidan', hidden: false },
         children: []
       }
     ]
