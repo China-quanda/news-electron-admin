@@ -33,8 +33,8 @@ const useStore = useSettingStore()
 .sidebar-logo-container {
   position: relative;
   width: 100%;
-  height: 60px;
-  line-height: 60px;
+  height:  var(--news-sidebar-logo-height);
+  line-height: var(--news-sidebar-logo-height);
   // background: #2b2f3a;
   text-align: center;
   overflow: hidden;

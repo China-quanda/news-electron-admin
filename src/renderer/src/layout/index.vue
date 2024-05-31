@@ -35,7 +35,7 @@ import Header from './Header/index.vue'
     flex-direction: column;
     background-color: rgb(29, 110, 164);
     &-header {
-      height: 70px;
+      height: var(--news-layout-header-height);
       background-color: rgb(38, 155, 234);
     }
     &-main {
@@ -43,8 +43,8 @@ import Header from './Header/index.vue'
       background-color: rgb(23, 112, 171);
     }
     &-footer {
-      height: 45px;
-      line-height: 45px;
+      height: var(--news-layout-footer-height);
+      line-height: var(--news-layout-footer-height);
       text-align: center;
       background-color: rgb(7, 50, 79);
     }

@@ -1,16 +1,167 @@
 import  { RouteRecordRaw,RouterView } from 'vue-router'
+import Layout from '@renderer/layout/index.vue'
 const systemRoute:RouteRecordRaw =  {
 	path: '/system',
 	name: 'System',
-	component: RouterView,
-	redirect: '/system/sensitive-word',
+	component: Layout,
+	// redirect: '/system/sensitive-word',
 	meta: { title: '系统管理', icon: 'icon-shouqicaidan' ,hidden: false},
 	children: [
 		{
-			path: '/system/sensitive-word',
-			name: 'SensitiveWord',
-			component: () => import('@/views/System/sensitive-word.vue'),
-			meta: { title: '敏感词管理', icon: 'icon-shouqicaidan',hidden: false },
+			path: '/system/tenant',
+			name: 'SystemTenant',
+			meta: { title: '租户管理', icon: 'icon-shouqicaidan',hidden: false },
+			children: [
+				{
+					path: '/system/tenant/list',
+					name: 'SystemTenantList',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '租户列表', icon: 'icon-shouqicaidan',hidden: false },
+					children: []
+				},
+				{
+					path: '/system/tenant/package',
+					name: 'SystemTenantPackage',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '租户套餐', icon: 'icon-shouqicaidan',hidden: false },
+					children: []
+				},
+			]
+		},
+		{
+			path: '/system/organization',
+			name: 'SystemOrganization',
+			meta: { title: '组织架构', icon: 'icon-shouqicaidan',hidden: false },
+			children: [
+				{
+					path: '/system/organization/org',
+					name: 'SystemOrganizationOrg',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '机构管理', icon: 'icon-shouqicaidan',hidden: false },
+					children: []
+				},
+				{
+					path: '/system/organization/dept',
+					name: 'SystemOrganizationDept',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '部门管理', icon: 'icon-shouqicaidan',hidden: false },
+					children: []
+				},
+				{
+					path: '/system/organization/post',
+					name: 'SystemOrganizationPost',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '岗位管理', icon: 'icon-shouqicaidan',hidden: false },
+					children: []
+				},
+			]
+		},
+		{
+			path: '/system/permission',
+			name: 'SystemPermission',
+			component: () => import('@renderer/pages/test.vue'),
+			meta: { title: '权限管理', icon: 'icon-shouqicaidan',hidden: false },
+			children: [
+				{
+					path: '/system/permission/mobileDevice',
+					name: 'SystemPermissionMobileDevice',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '用户设备', icon: 'icon-shouqicaidan',hidden: false },
+					children: []
+				},
+				{
+					path: '/system/permission/user',
+					name: 'SystemPermissionUser',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '用户管理', icon: 'icon-shouqicaidan',hidden: false },
+					children: []
+				},
+				{
+					path: '/system/permission/role',
+					name: 'SystemPermissionRole',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '角色管理', icon: 'icon-shouqicaidan',hidden: false },
+					children: []
+				},
+				{
+					path: '/system/permission/menu',
+					name: 'SystemPermissionMenu',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '菜单管理', icon: 'icon-shouqicaidan',hidden: false },
+					children: []
+				},
+			]
+		},
+		{
+			path: '/system/dm',
+			name: 'SystemDm',
+			component: () => import('@renderer/pages/test.vue'),
+			meta: { title: '数据管理', hidden: false },
+			children: [
+				{
+					path: '/system/dm/dict',
+					name: 'SystemDmDict',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '数据字典', hidden: false },
+					children: []
+				},
+				{
+					path: '/system/dm/dictData',
+					name: 'SystemDmDictData',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '字典数据', hidden: false },
+					children: []
+				},
+				{
+					path: '/system/dm/category',
+					name: 'SystemDmCategory',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '数据分类', hidden: false },
+					children: []
+				},
+				{
+					path: '/system/dm/config',
+					name: 'SystemDmConfig',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '参数管理', hidden: false },
+					children: []
+				},
+				{
+					path: '/system/dm/oss',
+					name: 'SystemDmOss',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '上传配置', hidden: false },
+					children: []
+				},
+				{
+					path: '/system/dm/file',
+					name: 'SystemDmFile',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '文件管理', hidden: false },
+					children: []
+				},
+				{
+					path: '/system/dm/region',
+					name: 'SystemDmRegion',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '行政区域', icon: 'icon-shouqicaidan',hidden: false },
+					children: []
+				},
+				{
+					path: '/system/dm/error-code',
+					name: 'SystemDmErrorCode',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '错误码管理', icon: 'icon-shouqicaidan',hidden: false },
+					children: []
+				},
+				{
+					path: '/system/dm/sensitive-word',
+					name: 'SystemDmSensitiveWord',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '敏感词管理', icon: 'icon-shouqicaidan',hidden: false },
+					children: []
+				},
+			]
 		},
 		{
 			path: '/system/log',
@@ -20,29 +171,63 @@ const systemRoute:RouteRecordRaw =  {
 			children: [
 				{
 					path: '/system/log/operation-log',
-					name: 'OperationLog',
-					component: () => import('@/views/System/log/operation-log.vue'),
+					name: 'SystemLogOperationLog',
+					component: () => import('@renderer/pages/test.vue'),
 					meta: { title: '操作日志', icon: 'icon-shouqicaidan',hidden: false },
 				},
 				{
 					path: '/system/log/login-log',
-					name: 'LoginLog',
-					component: () => import('@/views/System/log/login-log.vue'),
+					name: 'SystemLogLoginLog',
+					component: () => import('@renderer/pages/test.vue'),
 					meta: { title: '登录日志', icon: 'icon-shouqicaidan',hidden: false },
+				},
+				{
+					path: '/system/log/visit-log',
+					name: 'SystemLogVisitLog',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '访问日志', icon: 'icon-shouqicaidan',hidden: false },
 				},
 			]
 		},
 		{
-			path: '/system/dict/list',
-			name: 'SystemDictList',
-			component: () => import('@/views/System/dict/list.vue'),
-			meta: { title: '数据字典', icon: 'icon-shouqicaidan',hidden: false },
+			path: '/system/oauth2',
+			name: 'SystemOauth2',
+			redirect: '/system/log/operation-log',
+			meta: { title: 'oauth2', icon: 'icon-shouqicaidan',hidden: false },
+			children: [
+				{
+					path: '/system/oauth2/application',
+					name: 'SystemOauth2Application',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '应用管理', icon: 'icon-shouqicaidan',hidden: false },
+				},
+				{
+					path: '/system/oauth2/token',
+					name: 'SystemOauth2Token',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '令牌管理', icon: 'icon-shouqicaidan',hidden: false },
+				},
+			]
 		},
 		{
-			path: '/system/dict/data/:type',
-			name: 'SystemDictData',
-			component: () => import('@/views/System/dict/data.vue'),
-			meta: { title: '字典数据', icon: 'icon-shouqicaidan',hidden: true },
+			path: '/system/social',
+			name: 'SystemSocial',
+			redirect: '/system/log/operation-log',
+			meta: { title: '三方登录', icon: 'icon-shouqicaidan',hidden: false },
+			children: [
+				{
+					path: '/system/social/client',
+					name: 'SystemSocialClient',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '三方管理', icon: 'icon-shouqicaidan',hidden: false },
+				},
+				{
+					path: '/system/social/user',
+					name: 'SystemSocialUser',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '三方用户', icon: 'icon-shouqicaidan',hidden: false },
+				},
+			]
 		},
 		{
 			path: '/system/sms',
@@ -51,30 +236,24 @@ const systemRoute:RouteRecordRaw =  {
 			meta: { title: '短信管理', icon: 'icon-shouqicaidan',hidden: false },
 			children: [
 				{
-					path: '/system/sms/sms-channel',
-					name: 'SmsChannel',
-					component: () => import('@/views/System/sms/sms-channel.vue'),
+					path: '/system/sms/channel',
+					name: 'SystemSmsChannel',
+					component: () => import('@renderer/pages/test.vue'),
 					meta: { title: '短信渠道', icon: 'icon-shouqicaidan',hidden: false },
 				},
 				{
-					path: '/system/sms/sms-template',
-					name: 'SmsTemplate',
-					component: () => import('@/views/System/sms/sms-template.vue'),
+					path: '/system/sms/template',
+					name: 'SystemSmsTemplate',
+					component: () => import('@renderer/pages/test.vue'),
 					meta: { title: '短信模版', icon: 'icon-shouqicaidan',hidden: false },
 				},
 				{
-					path: '/system/sms/sms-log',
-					name: 'SmsLog',
-					component: () => import('@/views/System/sms/sms-log.vue'),
+					path: '/system/sms/log',
+					name: 'SystemSmsLog',
+					component: () => import('@renderer/pages/test.vue'),
 					meta: { title: '短信日志', icon: 'icon-shouqicaidan',hidden: false },
 				},
 			]
-		},
-		{
-			path: '/system/notice',
-			name: 'SystemNotice',
-			component: () => import('@/views/System/notice.vue'),
-			meta: { title: '通知公告', icon: 'icon-shouqicaidan',hidden: false },
 		},
 		{
 			path: '/system/mail',
@@ -83,56 +262,112 @@ const systemRoute:RouteRecordRaw =  {
 			meta: { title: '邮箱管理', icon: 'icon-shouqicaidan',hidden: false },
 			children: [
 				{
-					path: '/system/mail/mail-account',
-					name: 'MailAccount',
-					component: () => import('@/views/System/mail/mail-account.vue'),
+					path: '/system/mail/account',
+					name: 'SystemMailAccount',
+					component: () => import('@renderer/pages/test.vue'),
 					meta: { title: '邮箱账号', icon: 'icon-shouqicaidan',hidden: false },
 				},
 				{
-					path: '/system/mail/mail-template',
-					name: 'MailTemplate',
-					component: () => import('@/views/System/mail/mail-template.vue'),
+					path: '/system/mail/template',
+					name: 'SystemMailTemplate',
+					component: () => import('@renderer/pages/test.vue'),
 					meta: { title: '邮件模版', icon: 'icon-shouqicaidan',hidden: false },
 				},
 				{
-					path: '/system/mail/mail-log',
-					name: 'MailLog',
-					component: () => import('@/views/System/mail/mail-log.vue'),
+					path: '/system/mail/log',
+					name: 'SystemMailLog',
+					component: () => import('@renderer/pages/test.vue'),
 					meta: { title: '邮件记录', icon: 'icon-shouqicaidan',hidden: false },
 				},
 			]
 		},
 		{
-			path: '/system/notify',
-			name: 'SystemNotify',
-			redirect: '/system/notify/notify-template',
-			meta: { title: '站内信管理', icon: 'icon-shouqicaidan',hidden: false },
+			path: '/system/message',
+			name: 'SystemMessage',
+			redirect: '/system/log/operation-log',
+			meta: { title: '消息管理', icon: 'icon-shouqicaidan',hidden: false },
 			children: [
 				{
-					path: '/system/notify/notify-template',
-					name: 'NotifyTemplate',
-					component: () => import('@/views/System/notify/notify-template.vue'),
+					path: '/system/message/notice',
+					name: 'SystemMessageNotice',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '通知公告', icon: 'icon-shouqicaidan',hidden: false },
+				},
+				{
+					path: '/system/message/push',
+					name: 'SystemMessagePush',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '消息推送', icon: 'icon-shouqicaidan',hidden: false },
+				},
+				{
+					path: '/system/message/template',
+					name: 'SystemMessageTemplate',
+					component: () => import('@renderer/pages/test.vue'),
 					meta: { title: '模版管理', icon: 'icon-shouqicaidan',hidden: false },
 				},
 				{
-					path: '/system/notify/notify-message',
-					name: 'NotifyMessage',
-					component: () => import('@/views/System/notify/notify-message.vue'),
-					meta: { title: '消息记录', icon: 'icon-shouqicaidan',hidden: false },
-				}
+					path: '/system/message/template',
+					name: 'SystemMessageTemplate',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '站内信消息记录', icon: 'icon-shouqicaidan',hidden: false },
+				},
 			]
 		},
 		{
-			path: '/system/error-code',
-			name: 'SystemErrorCode',
-			component: () => import('@/views/System/error-code.vue'),
-			meta: { title: '错误码管理', icon: 'icon-shouqicaidan',hidden: false },
+			path: '/system/monitor',
+			name: 'SystemMonitor',
+			redirect: '/system/log/operation-log',
+			meta: { title: '系统监控', icon: 'icon-shouqicaidan',hidden: false },
+			children: [
+				{
+					path: '/system/monitor/online',
+					name: 'SystemMonitorOnline',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '在线用户', icon: 'icon-shouqicaidan',hidden: false },
+				},
+				{
+					path: '/system/monitor/job',
+					name: 'SystemMonitorJob',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '定时任务', icon: 'icon-shouqicaidan',hidden: false },
+				},
+				{
+					path: '/system/monitor/druid',
+					name: 'SystemMonitorDruid',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '数据监控', icon: 'icon-shouqicaidan',hidden: false },
+				},
+				{
+					path: '/system/monitor/server',
+					name: 'SystemMonitorServer',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '服务监控', icon: 'icon-shouqicaidan',hidden: false },
+				},
+				{
+					path: '/system/monitor/cache',
+					name: 'SystemMonitorCache',
+					component: () => import('@renderer/pages/test.vue'),
+					meta: { title: '缓存监控', icon: 'icon-shouqicaidan',hidden: false },
+				},
+			]
 		},
 		{
-			path: '/system/area',
-			name: 'SystemArea',
-			component: () => import('@/views/System/area.vue'),
-			meta: { title: '地区管理', icon: 'icon-shouqicaidan',hidden: false },
+			path: '/system/apidoc',
+			name: 'SystemApidoc',
+			component: () => import('@renderer/pages/test.vue'),
+			meta: { title: '接口文档', icon: 'icon-shouqicaidan',hidden: false },
+		},
+		{
+			path: '/system/dbdoc',
+			name: 'SystemDbdoc',
+			component: () => import('@renderer/pages/test.vue'),
+			meta: { title: '数据库文档', icon: 'icon-shouqicaidan',hidden: false },
+		},
+		{
+			path: '/system/codegen',
+			name: 'SystemCodegen',
+			component: () => import('@renderer/pages/test.vue'),
+			meta: { title: '代码生成', icon: 'icon-shouqicaidan',hidden: false },
 		},
 	]
 }

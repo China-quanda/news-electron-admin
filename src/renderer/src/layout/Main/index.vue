@@ -17,8 +17,8 @@ const useStore = useSettingStore()
 
 <style scoped lang="scss">
 .main {
-  margin: 0.5px;
-  min-height: calc(100vh - 70px - 45px);
+  // margin: 0.5px;
+  height: calc(100vh - var(--news-layout-header-height) - var(--news-layout-footer-height));
   // background-color: var(--el-bg-color);
 }
 .fade-enter-from {

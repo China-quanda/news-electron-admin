@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 // import { local} from '@/utils/storage'
 //2.第一个参数是id,传入一个字符串，第二个参数是是对象
 import logo from '@assets/electron.svg'
-export const useSettingStore = defineStore('setting', {
+export const useSettingStore = defineStore('settingStore', {
   state: () => {
     return {
       // collapse: local.get('collapse') || setting.collapse,//是否折叠
@@ -32,5 +32,8 @@ export const useSettingStore = defineStore('setting', {
       this.lockScreen = value
       // local.set('lockScreen',value)
     }
-  }
+  },
+  persist: {
+    paths: ['collapse'],
+  },
 })

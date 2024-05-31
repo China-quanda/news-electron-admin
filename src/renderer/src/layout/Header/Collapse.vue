@@ -12,12 +12,8 @@ const btn = () => {
 </script>
 
 <template>
-  <span style="cursor: pointer" @click="btn">
-    {{ collapse ? '展开' : '收起' }}
-    <!-- <my-icon
-      :icon="collapse ? 'icon-zhankaicaidan' : 'icon-shouqicaidan'"
-      size="20"
-      color="#8f8f8f"
-    /> -->
-  </span>
+  <el-icon  style="cursor: pointer;width: 30px;" @click="btn">
+    <Expand v-if="collapse" />
+    <Fold v-else />
+  </el-icon>
 </template>

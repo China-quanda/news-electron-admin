@@ -69,6 +69,10 @@ console.log('routes-routes', props.routes)
 </template>
 
 <style scoped lang="scss">
+.el-scrollbar{
+  overflow-y: auto;
+  height: calc(100vh - 60px);
+}
 .el-menu {
   border: none;
 }
