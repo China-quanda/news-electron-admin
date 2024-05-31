@@ -26,27 +26,28 @@ import Header from './Header/index.vue'
   .layout-left {
     // width: 230px;
     flex-shrink: 0;
-    background-color: #f5f5f5;
+    // background-color: #f5f5f5;
     // background-color: beige;
   }
   .layout-right {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: rgb(29, 110, 164);
+    // background-color: rgb(29, 110, 164);
     &-header {
       height: var(--news-layout-header-height);
-      background-color: rgb(38, 155, 234);
+      // background-color: rgb(38, 155, 234);
     }
     &-main {
       flex: 1;
-      background-color: rgb(23, 112, 171);
+      // background-color: rgb(23, 112, 171);
     }
     &-footer {
       height: var(--news-layout-footer-height);
       line-height: var(--news-layout-footer-height);
       text-align: center;
-      background-color: rgb(7, 50, 79);
+      // background-color: rgb(7, 50, 79);
+      background-color: var(--el-bg-color);
     }
   }
 }

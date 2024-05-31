@@ -49,6 +49,30 @@ export const staticRoutes: RouteRecordRaw[] = [
         children: []
       }
     ]
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/pages/common/login.vue'),
+    meta: { title: '登录', hidden: true }
+  },
+  {
+    path: '/lockScreen',
+    name: 'LockScreen',
+    component: () => import('@/pages/common/lockScreen.vue'),
+    meta: { title: '锁屏', hidden: true }
+  },
+  {
+    path: '/error/404',
+    name: '404',
+    component: () => import('@/pages/common/404.vue'),
+    meta: { title: '404', hidden: true }
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/error/404',
+    name: 'Error',
+    meta: { title: '404', hidden: true }
   }
 ]
 

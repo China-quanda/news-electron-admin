@@ -19,7 +19,7 @@ const useStore = useSettingStore()
 .main {
   // margin: 0.5px;
   height: calc(100vh - var(--news-layout-header-height) - var(--news-layout-footer-height));
-  // background-color: var(--el-bg-color);
+  background-color: var(--el-bg-color);
 }
 .fade-enter-from {
   opacity: 0;

@@ -2,16 +2,29 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Maya后台管理系统-index</title>
+    <title>Maya后台管理系统</title>
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
     />
+    <link type="text/css" rel="stylesheet" href="./src/assets/styles/loading.css"/>
   </head>
 
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="preload__wrap" id="AppLoading">
+        <div class="preload__container">
+          <p class="preload__name">MAYA-ADMIN</p>
+          <div class="preload__loading"></div>
+          <p class="preload__title">正在加载资源...</p>
+          <p class="preload__sub-title">初次加载资源可能需要较多时间 请耐心等待</p>
+        </div>
+        <div class="preload__footer">
+          <a href="https://www.i6i8.cnom/" target="_blank"> https://www.i6i8.cn </a>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
