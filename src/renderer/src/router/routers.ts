@@ -51,6 +51,21 @@ export const staticRoutes: RouteRecordRaw[] = [
     ]
   },
   {
+    path: '/common',
+    component: Layout,
+    name: 'Common',
+    meta: { title: 'common', icon: 'icon-shouqicaidan', hidden: false },
+    children: [
+      {
+        path: '/about',
+        name: 'about',
+        component: () => import('@/pages/common/about.vue'),
+        meta: { title: '关于项目', icon: 'icon-shouqicaidan', hidden: false },
+        children: []
+      }
+    ]
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('@/pages/common/login.vue'),
