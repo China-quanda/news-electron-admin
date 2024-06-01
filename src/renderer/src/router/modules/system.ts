@@ -123,7 +123,7 @@ const systemRoute: RouteRecordRaw = {
         {
           path: '/system/dm/config',
           name: 'SystemDmConfig',
-          component: () => import('@renderer/pages/test.vue'),
+          component: () => import('@/pages/System/dm/config/index.vue'),
           meta: { title: '参数管理', hidden: false },
           children: []
         },
