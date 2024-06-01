@@ -45,6 +45,8 @@ import Header from './Header/index.vue'
     &-footer {
       height: var(--news-layout-footer-height);
       line-height: var(--news-layout-footer-height);
+      color: var(--el-text-color-primary);
+      font-size: 12px;
       text-align: center;
       // background-color: rgb(7, 50, 79);
       background-color: var(--el-bg-color);

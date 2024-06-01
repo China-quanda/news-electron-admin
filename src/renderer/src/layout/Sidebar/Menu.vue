@@ -4,8 +4,6 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 const useStore = useSettingStore()
 const props = defineProps(['routes'])
-
-console.log('routes-routes', props.routes)
 </script>
 
 <template>

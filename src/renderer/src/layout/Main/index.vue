@@ -1,4 +1,7 @@
 <script setup lang="ts">
+defineOptions({
+  name: 'Main'
+})
 import { useSettingStore } from '@/store/setting'
 const useStore = useSettingStore()
 </script>

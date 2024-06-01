@@ -4,10 +4,10 @@ import { useUserStore } from '@/store/user'
 const userStore = useUserStore(createPinia())
 
 const request = axios.create({
-  baseURL: 'http://127.0.0.1:8080',
+  baseURL: 'http://127.0.0.1:3001',
   timeout: 10000,
   headers: {
-    'Content-Type': 'application/json;charset=UTF-8'
+    // 'Content-Type': 'application/json;charset=UTF-8'
   }
 })
 

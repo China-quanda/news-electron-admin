@@ -1,4 +1,7 @@
 <script setup lang="ts">
+defineOptions({
+  name: 'Header'
+})
 import Fullscreen from './Fullscreen.vue'
 import Collapse from './Collapse.vue'
 import Refsh from './Refsh.vue'

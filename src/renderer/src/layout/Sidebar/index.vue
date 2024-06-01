@@ -1,4 +1,7 @@
 <script setup lang="ts">
+defineOptions({
+  name: 'Sidebar'
+})
 import { reactive } from 'vue'
 import { staticRoutes } from '@router/routers'
 import { useSettingStore } from '@store/setting'
