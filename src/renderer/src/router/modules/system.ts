@@ -10,6 +10,7 @@ const systemRoute: RouteRecordRaw = {
     {
       path: '/system/tenant',
       name: 'SystemTenant',
+      redirect: '/system/tenant/list',
       meta: { title: '租户管理', icon: 'icon-shouqicaidan', hidden: false },
       children: [
         {
@@ -94,6 +95,7 @@ const systemRoute: RouteRecordRaw = {
     },
     {
       path: '/system/dm',
+      redirect: '/system/dm/dict',
       name: 'SystemDm',
       meta: { title: '数据管理', hidden: false },
       children: [
@@ -108,7 +110,7 @@ const systemRoute: RouteRecordRaw = {
           path: '/system/dm/dictData',
           name: 'SystemDmDictData',
           component: () => import('@/pages/System/dm/dictData/index.vue'),
-          meta: { title: '字典数据', hidden: false },
+          meta: { title: '字典数据', hidden: true },
           children: []
         },
         {
