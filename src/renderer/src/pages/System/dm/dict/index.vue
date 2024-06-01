@@ -89,10 +89,10 @@ const resetForm = (formEl: FormInstance | undefined) => {
   formEl.resetFields()
 }
 // 去数据字段页面
-const toDictDataPage = (id: number) => {
+const toDictDataPage = (row: IDictListItem) => {
   router.push({
     path: '/system/dm/dictData',
-    query: { dictId: id }
+    query: { dictId: row.id, dictType: row.type }
   })
 }
 // 初始化
@@ -265,7 +265,7 @@ const submitDictForm = async (formEl: FormInstance | undefined) => {
         </el-table-column>
         <el-table-column label="操作" fixed="right" align="center" width="300">
           <template #default="scope">
-            <el-button type="success" text bg @click="toDictDataPage(scope.row.id)"
+            <el-button type="success" text bg @click="toDictDataPage(scope.row)"
               >字典数据</el-button
             >
             <el-button type="primary" icon="Edit" text bg @click="operation('edit', scope.row)"
@@ -283,12 +283,9 @@ const submitDictForm = async (formEl: FormInstance | undefined) => {
       <el-pagination
         v-model:current-page="query.pageNum"
         v-model:page-size="query.pageSize"
-        :pager-count="8"
         :page-sizes="[10, 20, 30, 50]"
         :total="total"
-        :page-count="total"
         background
-        hide-on-single-page
         layout="sizes,prev, pager, next,jumper,total"
         @size-change="handleSizeChange"
         @current-change="handlePageChange"
@@ -317,8 +314,8 @@ const submitDictForm = async (formEl: FormInstance | undefined) => {
         /></el-form-item>
         <el-form-item label="字典状态" prop="status">
           <el-radio-group v-model="dictForm.status">
-            <el-radio :label="true">开启</el-radio>
-            <el-radio :label="false">关闭</el-radio>
+            <el-radio :value="true">开启</el-radio>
+            <el-radio :value="false">关闭</el-radio>
           </el-radio-group>
         </el-form-item>
         <el-form-item label="字典备注" prop="dictForm.type"
