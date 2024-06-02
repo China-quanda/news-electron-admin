@@ -116,7 +116,7 @@ const systemRoute: RouteRecordRaw = {
         {
           path: '/system/dm/category',
           name: 'SystemDmCategory',
-          component: () => import('@renderer/pages/test.vue'),
+          component: () => import('@/pages/System/dm/category/index.vue'),
           meta: { title: '数据分类', hidden: false },
           children: []
         },
