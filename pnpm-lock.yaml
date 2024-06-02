@@ -41,6 +41,9 @@ dependencies:
   vue-router:
     specifier: '4'
     version: 4.3.2(vue@3.4.27)
+  web-storage-cache:
+    specifier: ^1.1.1
+    version: 1.1.1
 
 devDependencies:
   '@electron-toolkit/eslint-config':
@@ -4596,6 +4599,10 @@ packages:
       '@vue/server-renderer': 3.4.27(vue@3.4.27)
       '@vue/shared': 3.4.27
       typescript: 5.4.5
+
+  /web-storage-cache@1.1.1:
+    resolution: {integrity: sha512-D0MieGooOs8RpsrK+vnejXnvh4OOv/+lTFB35JRkJJQt+uOjPE08XpaE0QBLMTRu47B1KGT/Nq3Gbag3Orinzw==}
+    dev: false
 
   /webpack-sources@3.2.3:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}

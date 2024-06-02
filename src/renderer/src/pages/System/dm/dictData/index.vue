@@ -5,9 +5,11 @@ defineOptions({
 import {
   DictDataItem,
   DictDataQuery,
+  ObjectWithArrayProps,
   addDmDictData,
   deleteManyDmDictData,
   getDmDictData,
+  getSystemDictDatas,
   patchDmDictData
 } from '@/api/system/dm/dictData'
 import { ref, reactive } from 'vue'
@@ -17,7 +19,7 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 // 查询
 const query = ref<DictDataQuery>({
-  dictId: 0,
+  dictType: '',
   pageNum: 1,
   pageSize: 10,
   status: true,
@@ -25,8 +27,8 @@ const query = ref<DictDataQuery>({
 })
 // 总数
 const total = ref(0)
-// 数据字典类型
-const dictType = ref('')
+// 数据字典数据
+const systemDictDatas = ref<ObjectWithArrayProps>()
 // 是否显示搜索表单
 const isShowSearchForm = ref(true)
 // 搜索表单 Ref
@@ -46,7 +48,7 @@ const dictDataForm = ref<DictDataItem>({
   value: '',
   class: '',
   sort: 0,
-  dictId: query.value.dictId,
+  dictId: 0,
   colorType: '',
   remark: '',
   status: true,
@@ -94,11 +96,13 @@ const resetForm = (formEl: FormInstance | undefined) => {
   formEl.resetFields()
 }
 // 初始化
-onMounted(() => {
-  query.value.dictId = Number(route.query.dictId)
+onMounted(async () => {
   dictDataForm.value.dictId = Number(route.query.dictId)
-  dictType.value = route.query.dictType as string
+  query.value.dictType = route.query.dictType as string
   loadDmDictData()
+
+  systemDictDatas.value = await getSystemDictDatas(['system_color_type'])
+  systemDictDatas.value.system_color_type[0]
 })
 
 // 删除数据
@@ -123,14 +127,14 @@ const del = async (ids: number[]) => {
 }
 // 关闭 新增 编辑 对话框
 const closeDictDataFormDialog = () => {
-  resetForm(dictDataFormRef.value) // 没有清空表单
+  // resetForm(dictDataFormRef.value) // 没有清空表单
   dictDataForm.value = {
     id: 0,
     label: '',
     value: '',
     class: '',
     sort: 0,
-    dictId: query.value.dictId,
+    dictId: Number(route.query.dictId),
     colorType: '',
     remark: '',
     status: true,
@@ -306,13 +310,26 @@ const submitdictDataForm = async (formEl: FormInstance | undefined) => {
         status-icon
       >
         <el-form-item label="字典类型">
-          <el-input v-model="dictType" disabled />
+          <el-input v-model="query.dictType" disabled />
         </el-form-item>
         <el-form-item label="字典标签" prop="label">
           <el-input v-model="dictDataForm.label" placeholder="请输入字典标签" />
         </el-form-item>
         <el-form-item label="字典键值" prop="value">
           <el-input v-model="dictDataForm.value" placeholder="请输入字典键值" />
+        </el-form-item>
+        <el-form-item label="css Class" prop="class">
+          <el-input v-model="dictDataForm.class" placeholder="请输入Class" />
+        </el-form-item>
+        <el-form-item label="颜色类型" prop="colorType">
+          <el-select v-model="dictDataForm.colorType" clearable placeholder="请选择颜色类型">
+            <el-option
+              v-for="item in systemDictDatas!.system_color_type"
+              :key="item.id"
+              :label="item.label"
+              :value="item.value"
+            />
+          </el-select>
         </el-form-item>
         <el-form-item label="字典排序" prop="sort">
           <el-input-number v-model="dictDataForm.sort" :min="0" controls-position="right" />
