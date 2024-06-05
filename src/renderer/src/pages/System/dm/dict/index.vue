@@ -178,7 +178,7 @@ const submitDictForm = async (formEl: FormInstance | undefined) => {
             /></el-form-item>
           </el-col>
           <el-col :span="6">
-            <el-form-item label="字典状态">
+            <el-form-item label="字典状态" prop="status">
               <el-select
                 v-model="query.status"
                 clearable

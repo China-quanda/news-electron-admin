@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineOptions({
-  name: 'DictData'
+  name: 'Config'
 })
 import {
   ConfigEntity,
@@ -52,7 +52,7 @@ const configForm = ref<ConfigEntity>({
   key: ''
 })
 // 对话框中新增编辑表单验证规则
-const dictDataRules = reactive<FormRules>({
+const configRules = reactive<FormRules>({
   name: [{ required: true, message: '请输入参数名称', trigger: 'blur' }],
   key: [{ required: true, message: '请输入参数键名', trigger: 'blur' }],
   value: [{ required: true, message: '请输入参数键值', trigger: 'blur' }]
@@ -176,7 +176,7 @@ const submitconfigForm = async (formEl: FormInstance | undefined) => {
       <el-form ref="searchFormRef" :model="query" label-width="80px" status-icon>
         <el-row :gutter="20">
           <el-col :span="6">
-            <el-form-item label="参数名称"
+            <el-form-item label="参数名称" prop="name"
               ><el-input
                 v-model="query.name"
                 placeholder="参数名称"
@@ -185,12 +185,12 @@ const submitconfigForm = async (formEl: FormInstance | undefined) => {
             /></el-form-item>
           </el-col>
           <el-col :span="6">
-            <el-form-item label="参数键名"
+            <el-form-item label="参数键名" prop="key"
               ><el-input v-model="query.key" placeholder="参数键名" clearable @clear="loadDmConfig"
             /></el-form-item>
           </el-col>
           <el-col :span="6">
-            <el-form-item label="系统内置">
+            <el-form-item label="系统内置" prop="type">
               <el-select
                 v-model="query.type"
                 clearable
@@ -203,7 +203,7 @@ const submitconfigForm = async (formEl: FormInstance | undefined) => {
             </el-form-item>
           </el-col>
           <el-col :span="6">
-            <el-form-item label="创建时间">
+            <el-form-item label="创建时间" prop="searchDate">
               <el-date-picker
                 v-model="searchDate"
                 type="daterange"
@@ -327,7 +327,7 @@ const submitconfigForm = async (formEl: FormInstance | undefined) => {
       <el-form
         ref="configFormRef"
         :model="configForm"
-        :rules="dictDataRules"
+        :rules="configRules"
         label-width="80px"
         status-icon
       >

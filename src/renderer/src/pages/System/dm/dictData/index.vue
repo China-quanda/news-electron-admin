@@ -177,12 +177,12 @@ const submitdictDataForm = async (formEl: FormInstance | undefined) => {
       <el-form ref="searchFormRef" :model="query" label-width="80px" status-icon>
         <el-row :gutter="20">
           <el-col :span="6">
-            <el-form-item label="字典标签"
+            <el-form-item label="字典标签" prop="label"
               ><el-input v-model="query.label" clearable @clear="loadDmDictData"
             /></el-form-item>
           </el-col>
           <el-col :span="6">
-            <el-form-item label="字典状态">
+            <el-form-item label="字典状态" prop="status">
               <el-select
                 v-model="query.status"
                 clearable
