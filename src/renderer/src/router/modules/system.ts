@@ -65,7 +65,7 @@ const systemRoute: RouteRecordRaw = {
         {
           path: '/system/permission/mobileDevice',
           name: 'SystemPermissionMobileDevice',
-          component: () => import('@renderer/pages/test.vue'),
+          component: () => import('@/pages/System/permission/mobileDevice/index.vue'),
           meta: { title: '用户设备', icon: 'icon-shouqicaidan', hidden: false },
           children: []
         },
