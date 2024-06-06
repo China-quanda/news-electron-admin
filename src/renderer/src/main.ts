@@ -4,8 +4,6 @@ import { initPlugins } from './plugins'
 import errorHandler from '@/utils/errorHandler'
 //导入自定义全局组件
 import gloalComponents from '@/gloalComponents'
-// unocss
-import 'virtual:uno.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'

@@ -14,6 +14,9 @@ dependencies:
   '@element-plus/icons-vue':
     specifier: ^2.3.1
     version: 2.3.1(vue@3.4.27)
+  '@unocss/reset':
+    specifier: ^0.60.4
+    version: 0.60.4
   '@vueuse/core':
     specifier: ^10.10.0
     version: 10.10.0(vue@3.4.27)
@@ -55,12 +58,27 @@ devDependencies:
   '@electron-toolkit/tsconfig':
     specifier: ^1.0.1
     version: 1.0.1(@types/node@18.19.33)
+  '@iconify/json':
+    specifier: ^2.2.216
+    version: 2.2.216
   '@rushstack/eslint-patch':
     specifier: ^1.7.1
     version: 1.10.3
   '@types/node':
     specifier: ^18.19.9
     version: 18.19.33
+  '@unocss/preset-icons':
+    specifier: ^0.60.4
+    version: 0.60.4
+  '@unocss/preset-uno':
+    specifier: ^0.60.4
+    version: 0.60.4
+  '@unocss/transformer-directives':
+    specifier: ^0.60.4
+    version: 0.60.4
+  '@unocss/transformer-variant-group':
+    specifier: ^0.60.4
+    version: 0.60.4
   '@vitejs/plugin-vue':
     specifier: ^5.0.3
     version: 5.0.4(vite@5.2.12)(vue@3.4.27)
@@ -1253,6 +1271,13 @@ packages:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     dev: true
 
+  /@iconify/json@2.2.216:
+    resolution: {integrity: sha512-dS2yVIAel1oIAGnaxR+EJyDRjKV9GGm9tUd8Pd8VEF91HB4HJrsMzkvz23GHDWyIITGdinx4ZUjMz3hOAv+D4Q==}
+    dependencies:
+      '@iconify/types': 2.0.0
+      pathe: 1.1.2
+    dev: true
+
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
     dev: true
@@ -1935,7 +1960,6 @@ packages:
 
   /@unocss/reset@0.60.4:
     resolution: {integrity: sha512-MEngG4byIHnfb0osvxqU2gBdBkXPPE4z+G9HeEt3JUadWAp2gggm8ojC1/1PoJF5M31loxGEVVrB0FLSKACw3g==}
-    dev: true
 
   /@unocss/rule-utils@0.60.4:
     resolution: {integrity: sha512-7qUN33NM4T/IwWavm9VIOCZ2+4hLBc0YUGxcMNTDZSFQRQLkWe3N5dOlgwKXtMyMKatZfbIRUKVDUgvEefoCTA==}
