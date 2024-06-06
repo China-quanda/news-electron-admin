@@ -6,6 +6,7 @@ import logo from '@assets/electron.svg'
 export const useSettingStore = defineStore('settingStore', {
   state: () => {
     return {
+      locale: 'zh' || 'en', // 语言
       collapse: false, //是否折叠
       showLogo: true, //是否显示logo
       title: 'news后台管理系统', //标题
@@ -61,6 +62,6 @@ export const useSettingStore = defineStore('settingStore', {
     }
   },
   persist: {
-    paths: ['collapse', 'dark', 'themeColor', 'lockScreen']
+    paths: ['collapse', 'dark', 'themeColor', 'lockScreen', 'locale']
   }
 })
