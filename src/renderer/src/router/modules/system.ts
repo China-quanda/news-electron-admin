@@ -37,7 +37,7 @@ const systemRoute: RouteRecordRaw = {
         {
           path: '/system/organization/org',
           name: 'SystemOrganizationOrg',
-          component: () => import('@renderer/pages/test.vue'),
+          component: () => import('@/pages/System/organization/org/index.vue'),
           meta: { title: '机构管理', icon: 'icon-shouqicaidan', hidden: false },
           children: []
         },
