@@ -341,7 +341,8 @@ const systemRoute: RouteRecordRaw = {
         {
           path: '/system/monitor/server',
           name: 'SystemMonitorServer',
-          component: () => import('@renderer/pages/test.vue'),
+          component: () => import('@/pages/System/monitor/server/index.vue'),
+          // component: () => import('@renderer/pages/test.vue'),
           meta: { title: '服务监控', icon: 'icon-shouqicaidan', hidden: false }
         },
         {
