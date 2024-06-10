@@ -50,7 +50,11 @@ const form = ref<OrgEntity>({
 const isExpandAll = ref(true)
 // 对话框中新增编辑表单验证规则
 const formRules = reactive<FormRules>({
-  name: [{ required: true, message: '请输入机构名称', trigger: 'blur' }]
+  name: [{ required: true, message: '请输入机构名称', trigger: 'blur' }],
+  email: [{ type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change'] }],
+  phone: [
+    { pattern: /^1[3|4|5|6|7|8|9][0-9]\d{8}$/, message: '请输入正确的手机号码', trigger: 'blur' }
+  ]
 })
 // 重新渲染表格状态
 const refreshTable = ref(true)
@@ -196,7 +200,7 @@ const submitForm = async (formEl: FormInstance | undefined) => {
       <el-form ref="searchFormRef" :model="query" label-width="80px" status-icon>
         <el-row :gutter="20">
           <el-col :span="6">
-            <el-form-item label="分类名称" prop="name"
+            <el-form-item label="机构名称" prop="name"
               ><el-input v-model="query.name" clearable @clear="loadDmCategory"
             /></el-form-item>
           </el-col>
